@@ -8,8 +8,8 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/chasestarr/go-twitter/twitter"
 	"github.com/coreos/pkg/flagutil"
-	"github.com/dghubble/go-twitter/twitter"
 	"github.com/dghubble/oauth1"
 )
 

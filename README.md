@@ -1,36 +1,35 @@
+# go-twitter [![Build Status](https://travis-ci.org/chasestarr/go-twitter.png)](https://travis-ci.org/dghubble/go-twitter) [![GoDoc](https://godoc.org/github.com/chasestarr/go-twitter?status.png)](https://godoc.org/github.com/chasestarr/go-twitter)
 
-
-# go-twitter [![Build Status](https://travis-ci.org/dghubble/go-twitter.png)](https://travis-ci.org/dghubble/go-twitter) [![GoDoc](https://godoc.org/github.com/dghubble/go-twitter?status.png)](https://godoc.org/github.com/dghubble/go-twitter)
-<img align="right" src="https://storage.googleapis.com/dghubble/gopher-on-bird.png">
+<img align="right" src="https://storage.googleapis.com/chasestarr/gopher-on-bird.png">
 
 go-twitter is a Go client library for the [Twitter API](https://dev.twitter.com/rest/public). Check the [usage](#usage) section or try the [examples](/examples) to see how to access the Twitter API.
 
 ### Features
 
 * Twitter REST API:
-    * Accounts
-    * Direct Messages
-    * Favorites
-    * Friends
-    * Friendships
-    * Followers
-    * Search
-    * Statuses
-    * Timelines
-    * Users
+  * Accounts
+  * Direct Messages
+  * Favorites
+  * Friends
+  * Friendships
+  * Followers
+  * Search
+  * Statuses
+  * Timelines
+  * Users
 * Twitter Streaming API
-    * Public Streams
-    * User Streams
-    * Site Streams
-    * Firehose Streams
+  * Public Streams
+  * User Streams
+  * Site Streams
+  * Firehose Streams
 
 ## Install
 
-    go get github.com/dghubble/go-twitter/twitter
+    go get github.com/chasestarr/go-twitter/twitter
 
 ## Documentation
 
-Read [GoDoc](https://godoc.org/github.com/dghubble/go-twitter/twitter)
+Read [GoDoc](https://godoc.org/github.com/chasestarr/go-twitter/twitter)
 
 ## Usage
 
@@ -64,7 +63,7 @@ search, resp, err := client.Search.Tweets(&twitter.SearchTweetParams{
 
 // User Show
 user, resp, err := client.Users.Show(&twitter.UserShowParams{
-    ScreenName: "dghubble",
+    ScreenName: "chasestarr",
 })
 
 // Followers
@@ -109,7 +108,7 @@ params := &twitter.StreamUserParams{
 stream, err := client.Streams.User(params)
 ```
 
-*Note* To see Direct Message events, your consumer application must ask Users for read/write/DM access to their account.
+_Note_ To see Direct Message events, your consumer application must ask Users for read/write/DM access to their account.
 
 #### Sample
 
@@ -142,7 +141,7 @@ If you run this in your main goroutine, it will receive messages forever unless 
 
 ### Demux
 
-Receiving messages of type `interface{}` isn't very nice, it means you'll have to type switch and probably filter out message types you don't care about. 
+Receiving messages of type `interface{}` isn't very nice, it means you'll have to type switch and probably filter out message types you don't care about.
 
 For this, try a `Demux`, like `SwitchDemux`, which receives messages and type switches them to call functions with typed messages.
 
@@ -170,7 +169,7 @@ demux.HandleChan(stream.Messages)
 
 ### Stopping
 
-The `Stream` will stop itself if the stream disconnects and retrying produces unrecoverable errors. When this occurs, `Stream` will close the `stream.Messages` channel, so execution will break out of any message *for range* loops.
+The `Stream` will stop itself if the stream disconnects and retrying produces unrecoverable errors. When this occurs, `Stream` will close the `stream.Messages` channel, so execution will break out of any message _for range_ loops.
 
 When you are finished receiving from a `Stream`, call `Stop()` which closes the connection, channels, and stops the goroutine **before** returning. This ensures resources are properly cleaned up.
 
@@ -223,7 +222,7 @@ For example, make requests as a consumer application on behalf of a user who has
 ```go
 // OAuth1
 import (
-    "github.com/dghubble/go-twitter/twitter"
+    "github.com/chasestarr/go-twitter/twitter"
     "github.com/dghubble/oauth1"
 )
 

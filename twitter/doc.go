@@ -14,7 +14,7 @@ some example requests.
 	// Status Show
 	tweet, resp, err := client.Statuses.Show(585613041028431872, nil)
 	// User Show
-	params := &twitter.UserShowParams{ScreenName: "dghubble"}
+	params := &twitter.UserShowParams{ScreenName: "chasestarr"}
 	user, resp, err := client.Users.Show(params)
 	// Followers
 	followers, resp, err := client.Followers.List(&FollowerListParams{})
@@ -35,7 +35,7 @@ has granted access, with OAuth1.
 
 	// OAuth1
 	import (
-		"github.com/dghubble/go-twitter/twitter"
+		"github.com/chasestarr/go-twitter/twitter"
 		"github.com/dghubble/oauth1"
 	)
 
@@ -52,7 +52,7 @@ application auth.
 
 	// OAuth2
 	import (
-		"github.com/dghubble/go-twitter/twitter"
+		"github.com/chasestarr/go-twitter/twitter"
 		"golang.org/x/oauth2"
 	)
 
